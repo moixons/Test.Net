@@ -1,0 +1,183 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="TestingModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'Testing.dbo.COUNT_REGISTER' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="COUNT_REGISTER">
+          <Key>
+            <PropertyRef Name="ID_USER" />
+            <PropertyRef Name="ID_REGISTER" />
+            <PropertyRef Name="COUNT" />
+          </Key>
+          <Property Name="ID_USER" Type="int" Nullable="false" />
+          <Property Name="ID_REGISTER" Type="int" Nullable="false" />
+          <Property Name="COUNT" Type="int" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'Testing.dbo.REGISTER' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="REGISTER">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="ID_USER" />
+            <PropertyRef Name="DLOGIN" />
+            <PropertyRef Name="CONNECT" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="ID_USER" Type="int" Nullable="false" />
+          <Property Name="DLOGIN" Type="datetime" Nullable="false" />
+          <Property Name="CONNECT" Type="bit" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'Testing.dbo.USERS' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="USERS">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="name" />
+            <PropertyRef Name="email" />
+            <PropertyRef Name="password" />
+          </Key>
+          <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="email" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="password" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="birthday" Type="datetime" />
+          <Property Name="country" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityContainer Name="TestingModelStoreContainer">
+          <EntitySet Name="COUNT_REGISTER" EntityType="Self.COUNT_REGISTER" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [COUNT_REGISTER].[ID_USER] AS [ID_USER], 
+    [COUNT_REGISTER].[ID_REGISTER] AS [ID_REGISTER], 
+    [COUNT_REGISTER].[COUNT] AS [COUNT]
+    FROM [dbo].[COUNT_REGISTER] AS [COUNT_REGISTER]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="REGISTER" EntityType="Self.REGISTER" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [REGISTER].[ID] AS [ID], 
+    [REGISTER].[ID_USER] AS [ID_USER], 
+    [REGISTER].[DLOGIN] AS [DLOGIN], 
+    [REGISTER].[CONNECT] AS [CONNECT]
+    FROM [dbo].[REGISTER] AS [REGISTER]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="USERS" EntityType="Self.USERS" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [USERS].[ID] AS [ID], 
+    [USERS].[name] AS [name], 
+    [USERS].[email] AS [email], 
+    [USERS].[password] AS [password], 
+    [USERS].[birthday] AS [birthday], 
+    [USERS].[country] AS [country]
+    FROM [dbo].[USERS] AS [USERS]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="TestingModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="COUNT_REGISTER">
+          <Key>
+            <PropertyRef Name="ID_USER" />
+            <PropertyRef Name="ID_REGISTER" />
+            <PropertyRef Name="COUNT" />
+          </Key>
+          <Property Name="ID_USER" Type="Int32" Nullable="false" />
+          <Property Name="ID_REGISTER" Type="Int32" Nullable="false" />
+          <Property Name="COUNT" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="REGISTER">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="ID_USER" />
+            <PropertyRef Name="DLOGIN" />
+            <PropertyRef Name="CONNECT" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="ID_USER" Type="Int32" Nullable="false" />
+          <Property Name="DLOGIN" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="CONNECT" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="USERS">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="name" />
+            <PropertyRef Name="email" />
+            <PropertyRef Name="password" />
+          </Key>
+          <Property Name="ID" Type="Guid" Nullable="false" />
+          <Property Name="name" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="birthday" Type="DateTime" Precision="3" />
+          <Property Name="country" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityContainer Name="TestingEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="COUNT_REGISTER" EntityType="Self.COUNT_REGISTER" />
+          <EntitySet Name="REGISTER" EntityType="Self.REGISTER" />
+          <EntitySet Name="USERS" EntityType="Self.USERS" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="TestingModelStoreContainer" CdmEntityContainer="TestingEntities">
+          <EntitySetMapping Name="COUNT_REGISTER">
+            <EntityTypeMapping TypeName="TestingModel.COUNT_REGISTER">
+              <MappingFragment StoreEntitySet="COUNT_REGISTER">
+                <ScalarProperty Name="ID_USER" ColumnName="ID_USER" />
+                <ScalarProperty Name="ID_REGISTER" ColumnName="ID_REGISTER" />
+                <ScalarProperty Name="COUNT" ColumnName="COUNT" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="REGISTER">
+            <EntityTypeMapping TypeName="TestingModel.REGISTER">
+              <MappingFragment StoreEntitySet="REGISTER">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="ID_USER" ColumnName="ID_USER" />
+                <ScalarProperty Name="DLOGIN" ColumnName="DLOGIN" />
+                <ScalarProperty Name="CONNECT" ColumnName="CONNECT" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="USERS">
+            <EntityTypeMapping TypeName="TestingModel.USERS">
+              <MappingFragment StoreEntitySet="USERS">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="birthday" ColumnName="birthday" />
+                <ScalarProperty Name="country" ColumnName="country" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

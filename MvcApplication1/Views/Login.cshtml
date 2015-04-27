@@ -1,0 +1,17 @@
+@model Logintp.ViewModel.LoginViewModel
+@{
+    ViewBag.Title = "Login";
+    Layout = "../Shared/_Layout.cshtml";
+}
+ 
+<h2>Login</h2>
+ 
+<div style="color:Black;">@Html.ValidationSummary(true)</div>
+<div>
+@using(Html.BeginForm())
+{
+@Html.EditorForModel("LoginViewModel")
+<input type="submit" value="Login" />
+}
+ 
+</div>

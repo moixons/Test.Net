@@ -1,0 +1,47 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvcApplication10", "MvcApplication10\MvcApplication10.csproj", "{0845121F-D558-4B56-9487-C93A2977FCA4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{F6E87577-7873-48C9-A28C-FC7057921814}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConnectionsManager", "ClassLibrary1\ConnectionsManager.csproj", "{475A0179-2FC8-48E8-90C1-68D3A35C87DF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Helpers", "Helpers\Helpers.csproj", "{73E30418-2975-450B-8024-12CEDB7472FC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharedModels", "SharedModels\SharedModels.csproj", "{A5A5C69C-DBE6-4440-B9C9-F1EE50D678B9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0845121F-D558-4B56-9487-C93A2977FCA4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0845121F-D558-4B56-9487-C93A2977FCA4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0845121F-D558-4B56-9487-C93A2977FCA4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0845121F-D558-4B56-9487-C93A2977FCA4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{475A0179-2FC8-48E8-90C1-68D3A35C87DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{475A0179-2FC8-48E8-90C1-68D3A35C87DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{475A0179-2FC8-48E8-90C1-68D3A35C87DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{475A0179-2FC8-48E8-90C1-68D3A35C87DF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{73E30418-2975-450B-8024-12CEDB7472FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{73E30418-2975-450B-8024-12CEDB7472FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{73E30418-2975-450B-8024-12CEDB7472FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{73E30418-2975-450B-8024-12CEDB7472FC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A5A5C69C-DBE6-4440-B9C9-F1EE50D678B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A5A5C69C-DBE6-4440-B9C9-F1EE50D678B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A5A5C69C-DBE6-4440-B9C9-F1EE50D678B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A5A5C69C-DBE6-4440-B9C9-F1EE50D678B9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
